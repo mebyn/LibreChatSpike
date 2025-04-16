@@ -27,32 +27,8 @@ const AuthLayout = () => (
 
 export const router = createBrowserRouter([
   {
-    path: 'share/:shareId',
-    element: <ShareRoute />,
-    errorElement: <RouteErrorBoundary />,
-  },
-  {
     path: '/',
     element: <StartupLayout />,
-    errorElement: <RouteErrorBoundary />,
-    children: [
-      {
-        path: 'register',
-        element: <Registration />,
-      },
-      {
-        path: 'forgot-password',
-        element: <RequestPasswordReset />,
-      },
-      {
-        path: 'reset-password',
-        element: <ResetPassword />,
-      },
-    ],
-  },
-  {
-    path: 'verify',
-    element: <VerifyEmail />,
     errorElement: <RouteErrorBoundary />,
   },
   {
@@ -61,19 +37,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <LoginLayout />,
-        children: [
-          {
-            path: 'login',
-            element: <Login />,
-          },
-          {
-            path: 'login/2fa',
-            element: <TwoFactorScreen />,
-          },
-        ],
+        element: <Login />,
       },
-      dashboardRoutes,
       {
         path: '/',
         element: <Root />,
