@@ -523,6 +523,8 @@ export type TAttachment =
       expiresAt: number;
     } & TAttachmentMetadata);
 
+export type TConversationMessages = Record<string, TMessage[]>;
+
 export type TMessage = z.input<typeof tMessageSchema> & {
   children?: TMessage[];
   plugin?: TResPlugin | null;

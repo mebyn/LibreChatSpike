@@ -1255,6 +1255,10 @@ export enum Constants {
 export enum LocalStorageKeys {
   /** Key for the admin defined App Title */
   APP_TITLE = 'appTitle',
+  /** Key for the user conversations */
+  USER_CONVERSATIONS = 'userConversations',
+  /** Key for the messages in each conversation */
+  CONVERSATION_HISTORY = 'conversationHistory',
   /** Key for the last conversation setup. */
   LAST_CONVO_SETUP = 'lastConversationSetup',
   /** Key for the last selected model. */

@@ -345,7 +345,7 @@ export default function useEventHandlers({
   );
 
   const createdHandler = useCallback(
-    (data: TResData, submission: EventSubmission) => {
+    (submission: EventSubmission) => {
       const { messages, userMessage, isRegenerate = false, isTemporary = false } = submission;
       const initialResponse = {
         ...submission.initialResponse,

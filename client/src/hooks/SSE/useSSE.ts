@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { v4 } from 'uuid';
 import { SSE } from 'sse.js';
-import { useSetRecoilState } from 'recoil';
+import { RecoilBridge, useSetRecoilState } from 'recoil';
 import {
   request,
   Constants,
@@ -11,8 +11,10 @@ import {
   LocalStorageKeys,
   removeNullishValues,
   isAssistantsEndpoint,
+  dataService,
+  EModelEndpoint,
 } from 'librechat-data-provider';
-import type { EventSubmission, TMessage, TPayload, TSubmission } from 'librechat-data-provider';
+import type { EventSubmission, TConversation, TMessage, TPayload, TSubmission } from 'librechat-data-provider';
 import type { EventHandlerParams } from './useEventHandlers';
 import type { TResData } from '~/common';
 import { useGenTitleMutation, useGetStartupConfig, useGetUserBalance } from '~/data-provider';
@@ -106,6 +108,11 @@ export default function useSSE(
 
     let textIndex = null;
 
+    const conversationId = payload.conversationId ?? crypto.randomUUID();
+    if (payload.parentMessageId === Constants.NO_PARENT) {
+      addNewUserConversation(conversationId, payload);
+      addNewConvoToLocalStorage(conversationId, payload, userMessage);
+    }
     const sse = new SSE(payloadData.server, {
       payload: JSON.stringify(payload),
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
@@ -120,27 +127,30 @@ export default function useSSE(
       }
     });
 
-    sse.addEventListener('message', (e: MessageEvent) => {
+    sse.addEventListener('message', async (e: MessageEvent) => {
       const data = JSON.parse(e.data);
 
       if (data.final != null) {
+        await appendMessageToConversation(conversationId, data);
         clearDraft(submission.conversation?.conversationId);
         const { plugins } = data;
         finalHandler(data, { ...submission, plugins } as EventSubmission);
         (startupConfig?.balance?.enabled ?? false) && balanceQuery.refetch();
         console.log('final', data);
         return;
-      } else if (data.created != null) {
-        const runId = v4();
-        setActiveRunId(runId);
-        userMessage = {
-          ...userMessage,
-          ...data.message,
-          overrideParentMessageId: userMessage.overrideParentMessageId,
-        };
+      }
+      // else if (data.created != null) {
+      //   const runId = v4();
+      //   setActiveRunId(runId);
+      //   userMessage = {
+      //     ...userMessage,
+      //     ...data.message,
+      //     overrideParentMessageId: userMessage.overrideParentMessageId,
+      //   };
 
-        createdHandler(data, { ...submission, userMessage } as EventSubmission);
-      } else if (data.event != null) {
+      //   createdHandler(data, { ...submission, userMessage } as EventSubmission);
+      // }
+      else if (data.event != null) {
         stepHandler(data, { ...submission, userMessage } as EventSubmission);
       } else if (data.sync != null) {
         const runId = v4();
@@ -191,9 +201,9 @@ export default function useSSE(
       const conversationId = latestMessages?.[latestMessages.length - 1]?.conversationId;
       return await abortConversation(
         conversationId ??
-          userMessage.conversationId ??
-          submission.conversation?.conversationId ??
-          '',
+        userMessage.conversationId ??
+        submission.conversation?.conversationId ??
+        '',
         submission as EventSubmission,
         latestMessages,
       );
@@ -251,4 +261,53 @@ export default function useSSE(
       }
     };
   }, [submission]);
+
+  async function addNewConvoToLocalStorage(conversationId: string, payload: TPayload, userMessage: TMessage) {
+    const newMessage: TMessage = {
+      messageId: payload.messageId ?? 'unknown-message-id',
+      parentMessageId: payload.parentMessageId ?? 'unknown-parent-id',
+      conversationId: conversationId,
+      sender: 'User',
+      text: payload.text ?? '',
+      isCreatedByUser: true,
+    }
+    dataService.addConversationMessage({ [conversationId]: [newMessage] })
+    const runId = v4();
+    setActiveRunId(runId);
+    const createdMessage = {
+      created: true,
+      message: newMessage
+    };
+    userMessage = {
+      ...userMessage,
+      ...createdMessage,
+      conversationId: conversationId,
+      overrideParentMessageId: userMessage.overrideParentMessageId,
+    };
+
+    createdHandler({ ...submission, userMessage } as EventSubmission);
+  }
+
+  async function addNewUserConversation(conversationId: string, payload: TPayload) {
+    const now = new Date().toISOString();
+    const newConversation: TConversation = {
+      conversationId: conversationId,
+      endpoint: payload.endpoint ?? null,
+      title: null,
+      createdAt: now,
+      updatedAt: now,
+      messages: [payload.messageId ?? ''],
+      model: payload.model,
+    };
+    dataService.addConversation(newConversation)
+  }
+
+  async function appendMessageToConversation(conversationId: string, data: any) {
+    data.conversation = {
+      ...data.conversation,
+      conversationId: conversationId,
+    };
+    const llmResponse = { ...data.responseMessage, conversationId: conversationId };
+    dataService.appendConversationMessage(llmResponse)
+  }
 }

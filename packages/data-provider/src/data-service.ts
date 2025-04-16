@@ -9,6 +9,7 @@ import * as config from './config';
 import request from './request';
 import * as s from './schemas';
 import * as r from './roles';
+import { LocalStorageKeys } from './config';
 
 export function abortRequestWithMessage(
   endpoint: string,
@@ -30,11 +31,89 @@ export function deleteUser(): Promise<s.TPreset> {
   return request.delete(endpoints.deleteUser());
 }
 
-export function getMessagesByConvoId(conversationId: string): Promise<s.TMessage[]> {
-  if (conversationId === 'new') {
+export function getAllMessages(): Promise<s.TConversationMessages> {
+  const localStoredMessages = localStorage.getItem(LocalStorageKeys.CONVERSATION_HISTORY);
+  if (!localStoredMessages) {
+    return Promise.resolve({});
+  }
+  try {
+    const conversationMessages: s.TConversationMessages = JSON.parse(localStoredMessages);
+    return Promise.resolve(conversationMessages);
+  } catch (error) {
+    console.error('Failed to parse conversation messages from local storage:', error);
+    return Promise.resolve({});
+  }
+}
+
+export async function addConversation(newConversation: t.TConversation) {
+  const userConversations = await listConversations();
+  const updatedConversations = [...userConversations.conversations, newConversation];
+  localStorage.setItem(
+    LocalStorageKeys.USER_CONVERSATIONS,
+    JSON.stringify({ ...userConversations, conversations: updatedConversations })
+  );
+}
+
+export async function addConversationMessage(newConversation: Record<string, t.TMessage[]>) {
+  const allMessages = await getAllMessages();
+  const updatedHistories = { ...allMessages, ...newConversation };
+  localStorage.setItem(LocalStorageKeys.CONVERSATION_HISTORY, JSON.stringify(updatedHistories));
+}
+
+export async function appendConversationMessage(newConversationMessage: t.TMessage) {
+  const allMessages = await getAllMessages();
+  const conversationInScope = [...(allMessages[newConversationMessage.conversationId ?? ''] || [])];
+  const lastMessage = conversationInScope.at(-1);
+  const mutatedMessage: t.TMessage = {
+    ...newConversationMessage,
+    parentMessageId: lastMessage?.messageId ?? null,
+  };
+  const updatedConversationInScope = [...conversationInScope, mutatedMessage];
+  const updatedAllMessages = {
+    ...allMessages,
+    [newConversationMessage.conversationId ?? '']: updatedConversationInScope,
+  };
+  localStorage.setItem(LocalStorageKeys.CONVERSATION_HISTORY, JSON.stringify(updatedAllMessages));
+
+  const userConversations = await listConversations();
+  const updatedConversations = userConversations.conversations.map((convo: t.TConversation) => {
+    if (convo.conversationId === newConversationMessage.conversationId) {
+      return {
+        ...convo,
+        messages: [...(convo.messages || []), mutatedMessage.messageId],
+      };
+    }
+    return convo
+  });
+  const updatedUserConversations = {
+    ...userConversations,
+    conversations: updatedConversations,
+  };
+
+  localStorage.setItem(
+    LocalStorageKeys.USER_CONVERSATIONS,
+    JSON.stringify(updatedUserConversations),
+  );
+}
+
+export async function getMessagesByConvoId(conversationId: string): Promise<s.TMessage[]> {
+  if (!conversationId || conversationId === 'new') {
     return Promise.resolve([]);
   }
-  return request.get(endpoints.messages(conversationId));
+  try {
+    const convoHistories = await getAllMessages();
+    return convoHistories[conversationId] || [];
+  } catch (error) {
+    console.error(`Failed to retrieve messages for conversationId: ${conversationId}`, error);
+    return [];
+  }
+  // if (
+  //   conversationId === config.Constants.NEW_CONVO ||
+  //   conversationId === config.Constants.PENDING_CONVO
+  // ) {
+  //   return Promise.resolve([]);
+  // }
+  // return request.get(endpoints.messages(conversationId));
 }
 
 export function getSharedMessages(shareId: string): Promise<t.TSharedMessagesResponse> {
@@ -588,13 +667,33 @@ export function forkConversation(payload: t.TForkConvoRequest): Promise<t.TForkC
   return request.post(endpoints.forkConversation(), payload);
 }
 
-export function deleteConversation(payload: t.TDeleteConversationRequest) {
+export async function deleteConversation(payload: t.TDeleteConversationRequest) {
+  const userConvos = await listConversations()
+  userConvos.conversations = userConvos.conversations.filter((convo) => convo.conversationId !== payload.conversationId)
+  localStorage.setItem(LocalStorageKeys.USER_CONVERSATIONS, JSON.stringify(userConvos));
+  const convoHistories = JSON.parse(localStorage.getItem(LocalStorageKeys.CONVERSATION_HISTORY) ?? '{}');
+  delete convoHistories[payload.conversationId ?? '']
+  localStorage.setItem(LocalStorageKeys.CONVERSATION_HISTORY, JSON.stringify(convoHistories));
+  console.log('Deleted conversation from local storage', payload.conversationId)
+  return Promise.resolve(payload.conversationId)
   //todo: this should be a DELETE request
-  return request.post(endpoints.deleteConversation(), { arg: payload });
+  // return request.post(endpoints.deleteConversation(), { arg: payload });
 }
 
 export function clearAllConversations(): Promise<unknown> {
-  return request.post(endpoints.deleteConversation(), { arg: {} });
+  const keys = Object.keys(localStorage);
+  keys.forEach((key) => {
+    if (
+      key.startsWith(LocalStorageKeys.USER_CONVERSATIONS) ||
+      key.startsWith(LocalStorageKeys.CONVERSATION_HISTORY)
+    ) {
+      localStorage.removeItem(key);
+    }
+  });
+  console.log('Cleared all conversations from local storage');
+  return Promise.resolve()
+  // return request.post(endpoints.deleteConversation(), { arg: {} });
+
 }
 
 export const listConversations = (
@@ -604,8 +703,14 @@ export const listConversations = (
   const pageNumber = (params?.pageNumber ?? '1') || '1'; // Default to page 1 if not provided
   const isArchived = params?.isArchived ?? false; // Default to false if not provided
   const tags = params?.tags || []; // Default to an empty array if not provided
-  return request.get(endpoints.conversations(pageNumber, isArchived, tags));
-};
+  const userConversations = JSON.parse(
+    localStorage.getItem(LocalStorageKeys.USER_CONVERSATIONS) ??
+    JSON.stringify({ conversations: [], pages: 1, pageNumber: "1", pageSize: 5 })
+  );
+  console.log('Fetch conversations list', userConversations)
+  return userConversations
+  // return request.get(endpoints.conversations(pageNumber, isArchived, tags));
+}
 
 export const listConversationsByQuery = (
   params?: q.ConversationListParams & { searchQuery?: string },
@@ -627,18 +732,37 @@ export const searchConversations = async (
   return request.get(endpoints.search(q, pageNumber));
 };
 
-export function getConversations(pageNumber: string): Promise<t.TGetConversationsResponse> {
-  return request.get(endpoints.conversations(pageNumber));
+export function getConversations(cursor: string): Promise<t.TGetConversationsResponse> {
+  return JSON.parse(localStorage.getItem(LocalStorageKeys.USER_CONVERSATIONS) ?? '{}');
+  // return request.get(endpoints.conversations(undefined, undefined, undefined, [], '', cursor));
 }
 
 export function getConversationById(id: string): Promise<s.TConversation> {
   return request.get(endpoints.conversationById(id));
 }
 
-export function updateConversation(
+export async function updateConversation(
   payload: t.TUpdateConversationRequest,
 ): Promise<t.TUpdateConversationResponse> {
-  return request.post(endpoints.updateConversation(), { arg: payload });
+  const userConvos = await listConversations()
+  const convoInScope = userConvos.conversations.find((convo) => convo.conversationId === payload.conversationId)
+  if (!convoInScope) {
+    throw new Error(`Conversation ${payload.conversationId} not found`);
+  }
+  const mutatedConvo = {
+    ...convoInScope,
+    title: payload.title,
+    updatedAt: new Date().toISOString(),
+  }
+  const updatedConvos = userConvos.conversations.map((convo) => {
+    if (convo.conversationId === payload.conversationId) {
+      return mutatedConvo
+    }
+    return convo
+  })
+  localStorage.setItem(LocalStorageKeys.USER_CONVERSATIONS, JSON.stringify({ ...userConvos, conversations: updatedConvos }));
+  return Promise.resolve(mutatedConvo)
+  // return request.post(endpoints.updateConversation(), { arg: payload });
 }
 
 export function archiveConversation(
@@ -648,7 +772,24 @@ export function archiveConversation(
 }
 
 export function genTitle(payload: m.TGenTitleRequest): Promise<m.TGenTitleResponse> {
-  return request.post(endpoints.genTitle(), payload);
+  return getMessagesByConvoId(payload.conversationId)
+    .then(async (messages) => {
+      if (messages.length === 0) {
+        throw new Error('No messages found for the given conversation ID');
+      }
+      const firstMessage = messages[0];
+      const generatedTitle = firstMessage.text.substring(0, 30);
+      updateConversation({
+        conversationId: payload.conversationId,
+        title: generatedTitle,
+      })
+      return { title: generatedTitle };
+    })
+    .catch((error) => {
+      console.error('Error fetching messages:', error);
+      throw new Error('Failed to generate title');
+    });
+  // return request.post(endpoints.genTitle(), payload);
 }
 
 export function getPrompt(id: string): Promise<{ prompt: t.TPrompt }> {
