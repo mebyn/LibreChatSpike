@@ -1,0 +1,516 @@
+event: message
+data: {"message":{"messageId":"5e3042ec-f62c-496c-a90d-1383a353a618","parentMessageId":"00000000-0000-0000-0000-000000000000","conversationId":"63352847-e847-47c5-b70f-5adbc06ea690","sender":"User","text":"Banana Poem","isCreatedByUser":true},"created":true}
+
+event: message
+data: {"event":"on_run_step","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","runId":"2bbf8c53-c2cd-472b-ac2d-8385e90a7cd7","type":"message_creation","index":0,"stepDetails":{"type":"message_creation","message_creation":{"message_id":"msg_qVNmpaOxoxY0Q3brdN7rS"}}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Sure"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"!"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" Here"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"’s"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" fun"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" little"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" poem"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" about"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" bananas"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":":\n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"---\n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"**"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"O"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"de"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" to"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" the"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" Banana"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"**\n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"In"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" coat"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" of"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" sunny"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" yellow"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"H"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"anging"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" from"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" the"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" tree"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"A"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" fruit"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" so"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" sweet"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" and"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" mellow"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Ban"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"ana"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" you"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"’re"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" joy"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" to"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" me"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"!"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Cur"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"ved"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" like"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" smile"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" that"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"’s"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" bright"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"A"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" snack"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" that"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" brings"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" delight"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"In"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" smoothies"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" or"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" sliced"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" on"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" toast"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"You"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"’re"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" the"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" one"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" I"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" love"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" the"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" most"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"."}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Mon"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"keys"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" swing"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" and"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" dance"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" with"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" g"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"lee"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Your"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" shape"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" perfect"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" mystery"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"In"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" lunch"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"boxes"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" on"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" picnic"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" days"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"You"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" brighten"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" up"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" the"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" dull"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"est"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" ways"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"."}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"So"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" here"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"’s"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" to"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" you"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" dear"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" banana"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"With"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" potassium"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" and"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" vitamin"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" joy"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"In"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" every"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" bite"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" a"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" touch"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" of"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" manana"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Your"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" simple"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" charm"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"—"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"oh"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":","}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" how"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" you"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" buoy"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"!"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"  \n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"---\n\n"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"Hope"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" you"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" enjoyed"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" it"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":"!"}]}}}
+
+event: message
+data: {"event":"on_message_delta","data":{"id":"step_hLApGIPPsTV1LwHRPe7ZB","delta":{"content":[{"type":"text","text":" 🍌"}]}}}
+
+event: message
+data: {"final":true,"conversation":{"_id":"68007125bc76f93736bfc03c","user":"67fdc13bcb667bc48a92e154","conversationId":"63352847-e847-47c5-b70f-5adbc06ea690","__v":0,"createdAt":"2025-04-17T03:11:30.318Z","endpoint":"openAI","expiredAt":null,"files":[],"isArchived":false,"messages":["68007125bc76f93736bfc03b","68007128bc76f93736bfc03d"],"model":"gpt-4o-mini","resendFiles":true,"tags":[],"title":"New Chat","updatedAt":"2025-04-17T03:11:33.405Z"},"title":"New Chat","requestMessage":{"messageId":"5e3042ec-f62c-496c-a90d-1383a353a618","parentMessageId":"00000000-0000-0000-0000-000000000000","conversationId":"63352847-e847-47c5-b70f-5adbc06ea690","sender":"User","text":"Banana Poem","isCreatedByUser":true,"tokenCount":11},"responseMessage":{"messageId":"2bbf8c53-c2cd-472b-ac2d-8385e90a7cd7","conversationId":"63352847-e847-47c5-b70f-5adbc06ea690","parentMessageId":"5e3042ec-f62c-496c-a90d-1383a353a618","isCreatedByUser":false,"model":"gpt-4o-mini","sender":"GPT-4o","promptTokens":11,"endpoint":"openAI","finish_reason":"stop","text":"Sure! Here’s a fun little poem about bananas:\n\n---\n\n**Ode to the Banana**\n\nIn a coat of sunny yellow,  \nHanging from the tree,  \nA fruit so sweet and mellow,  \nBanana, you’re a joy to me!  \n\nCurved like a smile that’s bright,  \nA snack that brings delight,  \nIn smoothies or sliced on toast,  \nYou’re the one I love the most.  \n\nMonkeys swing and dance with glee,  \nYour shape, a perfect mystery,  \nIn lunchboxes, on picnic days,  \nYou brighten up the dullest ways.  \n\nSo here’s to you, dear banana,  \nWith potassium and vitamin joy,  \nIn every bite, a touch of manana,  \nYour simple charm—oh, how you buoy!  \n\n---\n\nHope you enjoyed it! 🍌"}}
+
